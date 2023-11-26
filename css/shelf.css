@@ -1,0 +1,39 @@
+.container {
+  border: 1px solid #f5f5f5;
+  background-color: transparent;
+  border-radius: 20px;
+  height: 70svh;
+  width: 85vw;
+  overflow: hidden;
+}
+
+table {
+  font-size: 30px;
+  text-align: center;
+  color: #f5f5f5;
+  width: 100%;
+  border-spacing: 0;
+}
+th {
+  background-color: #3c2e24;
+  color: #f8f8f2;
+}
+table > tbody > tr:hover {
+  background-color: rgb(218, 217, 217);
+}
+table > tbody > tr > td > button {
+  height: 40px;
+  font-size: 25px;
+  width: 150px;
+  background-color: transparent;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+table > tbody > tr > td > button:hover {
+  background-color: #3C2E24;
+  color: white;
+}
+tbody {
+  background-color: #fefefe;
+  color: #424242;
+}

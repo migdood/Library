@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/shelf.css" />
     <script src="js/script.js" defer></script>
     <title>Library</title>
   </head>
@@ -18,10 +19,72 @@
       </nav>
     </header>
     <main>
-
+      <div class="container">
+        <table>
+          <tr>
+            <th>ISBN</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Pages</th>
+            <th>Status</th>
+            <th></th>
+            <th></th>
+            <th></th>
+          </tr>
+          <tr>
+            <td>123345456567</td>
+            <td>Name of the Wind</td>
+            <td>Patrick Rothfuss</td>
+            <td>876</td>
+            <td>Read</td>
+            <td><button>Edit</button></td>
+            <td><button>Delete</button></td>
+            <td><button>Read</button></td>
+          </tr>
+          <tr>
+            <td>432423423211</td>
+            <td>Old man's Secret</td>
+            <td>Patrick Rothfuss</td>
+            <td>1276</td>
+            <td>Read</td>
+            <td><button>Edit</button></td>
+            <td><button>Delete</button></td>
+            <td><button>Read</button></td>
+          </tr>
+          <tr>
+            <td>014949456487</td>
+            <td>Riri's Knife</td>
+            <td>Patrick Rothfuss</td>
+            <td>76</td>
+            <td>Read</td>
+            <td><button>Edit</button></td>
+            <td><button>Delete</button></td>
+            <td><button>Read</button></td>
+          </tr>
+          <tr>
+            <td>545327865122</td>
+            <td>Assassin's Apprentice</td>
+            <td>Robin Aztec</td>
+            <td>536</td>
+            <td>Read</td>
+            <td><button>Edit</button></td>
+            <td><button>Delete</button></td>
+            <td><button>Read</button></td>
+          </tr>
+        </table>
+      </div>
     </main>
     <footer>
-
+      <div class="footer-container">
+        Copyright ©
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+        migdood
+        <a href="https://github.com/migdood" target="_blank">
+          <i class=""><img src="img/github-icond.png" alt="Github Icon" /></i
+        ></a>
+      </div>
     </footer>
   </body>
 </html>
