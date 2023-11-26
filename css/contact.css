@@ -1,0 +1,40 @@
+main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70svh;
+}
+/* Styling for the contact card */
+.contact-card {
+  width: 50%;
+  border: 2px solid #DAA520; /* Gold border */
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #F5F5F5; /* Light cream background */
+  font-family: Arial, sans-serif;
+  font-size: 30px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Shadow for a lifted effect */
+}
+
+.contact-card h2 {
+  color: #366153; /* Forest green for headings */
+  margin-bottom: 15px;
+}
+
+.contact-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-card ul li {
+  margin-bottom: 10px;
+}
+
+.contact-card a {
+  color: #366153; /* Forest green for links */
+  text-decoration: none;
+}
+
+.contact-card a:hover {
+  text-decoration: underline;
+}
