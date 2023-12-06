@@ -9,6 +9,7 @@ const Shelf = document.getElementById("Shelf");
 
 const MyShelf = [];
 function AddtoMyShelf(book) {
+  // Creates the table rows and table data and button tags, adds the class to style
   const tr = document.createElement("tr");
   tr.classList.add("TR");
   tr.onmouseover = function () {
@@ -27,18 +28,52 @@ function AddtoMyShelf(book) {
   tdPages.classList.add("TD");
   const tdStatus = document.createElement("td");
   tdStatus.classList.add("TD");
+  const Edittd = document.createElement("td");
+  Edittd.classList.add("TD");
+  const button = document.createElement("button");
+  button.classList.add("btn");
+  const Deletetd = document.createElement("td");
+  Deletetd.classList.add("TD");
+  const Delbutton = document.createElement("button");
+  Delbutton.classList.add("btn");
 
+  // Writes  info into the fields and buttons
   tdISBN.textContent += book.ISBN;
   tdTitle.textContent += book.Title;
   tdAuthor.textContent += book.Author;
   tdPages.textContent += book.Pages;
   tdStatus.textContent += book.Status;
+  tdStatus.addEventListener("click", () => {
+    if (book.Status === "Reading") {
+      book.Status = "Read";
+      tdStatus.textContent = "Read";
+    } else if (book.Status === "Not Read") {
+      book.Status = "Reading";
+      tdStatus.textContent = "Reading";
+    } else if (book.Status === "Read") {
+      book.Status = "Not Read";
+      tdStatus.textContent = "Not Read";
+    }
+    //TODO: Add this data to JSON later
+  });
 
+  button.textContent += "Edit";
+  Delbutton.textContent += "Delete";
+  Delbutton.addEventListener("click", () => {
+    book.Delete();
+    Tbody.removeChild(tr);
+  });
+
+  // Appends all the buttons to table rows and such
   tr.appendChild(tdISBN);
   tr.appendChild(tdTitle);
   tr.appendChild(tdAuthor);
   tr.appendChild(tdPages);
   tr.appendChild(tdStatus);
+  Edittd.appendChild(button);
+  Deletetd.appendChild(Delbutton);
+  tr.appendChild(Edittd);
+  tr.appendChild(Deletetd);
   Tbody.appendChild(tr);
   Shelf.appendChild(Tbody);
 }

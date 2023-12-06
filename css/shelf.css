@@ -25,7 +25,7 @@ th {
   min-width: 50px;
   max-width: 350px;
 }
-#Shelf > #TBODY > .TR > .TD > button {
+#Shelf > #TBODY > .TR > .TD > .btn {
   height: 40px;
   font-size: 25px;
   width: 150px;
@@ -33,7 +33,7 @@ th {
   border: 1px solid black;
   border-radius: 5px;
 }
-#Shelf > #TBODY > .TR > .TD > button:hover {
+#Shelf > #TBODY > .TR > .TD > .btn:hover {
   cursor: pointer;
   background-color: #3c2e24;
   color: white;
