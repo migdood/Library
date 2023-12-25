@@ -15,6 +15,7 @@ header {
   justify-content: center;
   align-items: center;
 }
+
 header > nav > ul {
   list-style: none;
   padding: 40px;
@@ -25,7 +26,8 @@ header > nav > ul > li > a {
   border: 2px solid #daa520;
   border-radius: 0px 30px/ 10px 10px;
   height: 30px;
-  width: 110px;
+  width: 150px;
+  text-wrap: nowrap;
   padding: 10px;
   display: flex;
   justify-content: center;
@@ -40,9 +42,11 @@ header > nav > ul > li:hover {
 }
 main {
   display: flex;
+  /* flex-direction: column;
+  gap: 50px; */
   justify-content: center;
   align-items: center;
-  height: 100svh;
+  height: 80svh;
 }
 footer {
   display: flex;

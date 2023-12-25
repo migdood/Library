@@ -1,4 +1,5 @@
 const AddButton = document.getElementById("ADDBUTTON");
+const ClearButton = document.getElementById("CLEARBUTTON");
 const ISBN = document.getElementById("ISBN");
 const Title = document.getElementById("Title");
 const Author = document.getElementById("Author");
@@ -8,7 +9,7 @@ const Tbody = document.getElementById("TBODY");
 const Shelf = document.getElementById("Shelf");
 
 const MyShelf = [];
-function AddtoMyShelf(book) {
+function AddToMyShelf(book) {
   // Creates the table rows and table data and button tags, adds the class to style
   const tr = document.createElement("tr");
   tr.classList.add("TR");
@@ -94,7 +95,14 @@ class Book {
     }
   }
 }
+ClearButton.addEventListener("click",()=>{
+  ISBN.value = "";
+  Title.value = "";
+  Author.value = "";
+  Pages.value = "";
+  Status.value = "";
 
+});
 AddButton.addEventListener("click", () => {
   if (
     (ISBN.value != "",
@@ -111,11 +119,12 @@ AddButton.addEventListener("click", () => {
       Status.value
     );
     MyShelf.push(book);
-    AddtoMyShelf(book);
+    AddToMyShelf(book);
     console.log(MyShelf);
   } else {
     console.log("Empty Input Field");
   }
+  ClearButton.click();
 });
 const Book1 = new Book(
   9788804714095,
@@ -142,5 +151,5 @@ const Book3 = new Book(
 MyShelf.push(Book1, Book2, Book3);
 // Scans the whole array for books and displays them
 MyShelf.forEach((book) => {
-  AddtoMyShelf(book);
+  AddToMyShelf(book);
 });

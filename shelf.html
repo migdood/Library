@@ -18,35 +18,49 @@
         </ul>
       </nav>
     </header>
-    <main>
-      <div class="container">
-        <table>
-          <tr>
-            <td><input type="text" id="ISBN" /></td>
-            <td><input type="text" id="Title" /></td>
-            <td><input type="text" id="Author" /></td>
-            <td><input type="number" name="" id="Pages" /></td>
-            <td><input type="text" id="Status" /></td>
-            <td><button id="ADDBUTTON">ADD</button></td>
-            <td><button>Delete</button></td>
-            <td><button>Read</button></td>
-          </tr>
-        </table>
-        <table id="Shelf">
-          <tr>
-            <th>ISBN</th>
-            <th>Title</th>
-            <th>Author</th>
-            <th>Pages</th>
-            <th style="min-width: 150px;">Status i</th>
-            <th></th>
-            <th></th>
-            
-          </tr>
-          <tbody id="TBODY"></tbody>
-        </table>
+    <div class="mainContainer">
+      <div id="DropDownContainer">
+        <div id="DropDown">
+          <table>
+            <tr>
+              <td><input type="text" id="ISBN" class="TextBox" placeholder="ISBN"/></td>
+              <td><input type="text" id="Title" class="TextBox" placeholder="Title"/></td>
+              <td><input type="text" id="Author" class="TextBox" placeholder="Author"/></td>
+              <td>
+                <input type="number" name="" id="Pages" class="TextBox" placeholder="Pages"/>
+              </td>
+              <td>
+                <select name="status" id="Status" class="TextBox">
+                  <option value="Read">Read</option>
+                  <option value="Reading">Reading</option>
+                  <option value="Not Read">Not Read</option>
+                </select>
+              </td>
+              <td><button id="ADDBUTTON" class="DropDownbtn">ADD</button></td>
+              <td><button id="CLEARBUTTON" class="DropDownbtn">Clear</button></td>
+            </tr>
+          </table>
+        </div>
+        <div id="DropDownPuller">V</div>
       </div>
-    </main>
+      <main>
+        <div class="container">
+          <table id="Shelf">
+            <tr>
+              <th>ISBN</th>
+              <th>Title</th>
+              <th>Author</th>
+              <th>Pages</th>
+              <th style="min-width: 150px">Status</th>
+              <th></th>
+              <th></th>
+            </tr>
+            <tbody id="TBODY"></tbody>
+          </table>
+        </div>
+      </main>
+    </div>
+
     <footer>
       <div class="footer-container">
         Copyright ©
