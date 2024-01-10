@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/shelf.css" />
     <script src="js/script.js" defer></script>
-    <title>Library</title>
+    <title>Library - Shelf</title>
   </head>
   <body>
     <header>
@@ -23,25 +23,58 @@
         <div id="DropDown">
           <table>
             <tr>
-              <td><input type="text" id="ISBN" class="TextBox" placeholder="ISBN"/></td>
-              <td><input type="text" id="Title" class="TextBox" placeholder="Title"/></td>
-              <td><input type="text" id="Author" class="TextBox" placeholder="Author"/></td>
-              <td>
-                <input type="number" name="" id="Pages" class="TextBox" placeholder="Pages"/>
-              </td>
-              <td>
-                <select name="status" id="Status" class="TextBox">
-                  <option value="Read">Read</option>
-                  <option value="Reading">Reading</option>
-                  <option value="Not Read">Not Read</option>
-                </select>
-              </td>
-              <td><button id="ADDBUTTON" class="DropDownbtn">ADD</button></td>
-              <td><button id="CLEARBUTTON" class="DropDownbtn">Clear</button></td>
+              <form id="form">
+                <td>
+                  <input
+                    type="text"
+                    id="ISBN"
+                    class="TextBox"
+                    placeholder="ISBN"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="text"
+                    id="Title"
+                    class="TextBox"
+                    placeholder="Title"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="text"
+                    id="Author"
+                    class="TextBox"
+                    placeholder="Author"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    name=""
+                    id="Pages"
+                    class="TextBox"
+                    placeholder="Pages"
+                  />
+                </td>
+                <td>
+                  <select name="status" id="Status" class="TextBox">
+                    <option value="Read">Read</option>
+                    <option value="Reading">Reading</option>
+                    <option value="Not Read">Not Read</option>
+                  </select>
+                </td>
+                <td>
+                  <button id="ADDBUTTON" class="DropDownbtn">ADD</button>
+                </td>
+                <td>
+                  <button id="CLEARBUTTON" class="DropDownbtn">Clear</button>
+                </td>
+              </form>
             </tr>
           </table>
         </div>
-        <div id="DropDownPuller">V</div>
+        <div><img src="img/arrow.svg" alt="Arrow" id="DropDownPuller"/></div>
       </div>
       <main>
         <div class="container">

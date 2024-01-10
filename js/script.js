@@ -7,8 +7,31 @@ const Pages = document.getElementById("Pages");
 const Status = document.getElementById("Status");
 const Tbody = document.getElementById("TBODY");
 const Shelf = document.getElementById("Shelf");
+const Form = document.getElementById("form");
+const DropDownPuller = document.getElementById("DropDownPuller");
+const DropDown = document.getElementById("DropDown");
+let PullerIsDown = true;
+DropDownPuller.style.rotate = "180deg";
+
+DropDownPuller.addEventListener("click", () => {
+  if (PullerIsDown) {
+    DropDown.style.height = "0px";
+    DropDown.style.borderBottom = "0px";
+    DropDownPuller.style.rotate = "0deg";
+    PullerIsDown = false;
+  } else {
+    DropDown.style.height = "";
+    DropDown.style.borderBottom = "";
+    DropDownPuller.style.rotate = "180deg";
+    PullerIsDown = true;
+  }
+});
+Form.addEventListener("submit", (event) => {
+  event.preventDefault();
+});
 
 const MyShelf = [];
+// Delete Button is inside AddToMyShelf function
 function AddToMyShelf(book) {
   // Creates the table rows and table data and button tags, adds the class to style
   const tr = document.createElement("tr");
@@ -55,7 +78,6 @@ function AddToMyShelf(book) {
       book.Status = "Not Read";
       tdStatus.textContent = "Not Read";
     }
-    //TODO: Add this data to JSON later
   });
 
   button.textContent += "Edit";
@@ -95,13 +117,12 @@ class Book {
     }
   }
 }
-ClearButton.addEventListener("click",()=>{
+ClearButton.addEventListener("click", () => {
   ISBN.value = "";
   Title.value = "";
   Author.value = "";
   Pages.value = "";
-  Status.value = "";
-
+  Status.value = "Read";
 });
 AddButton.addEventListener("click", () => {
   if (
