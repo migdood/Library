@@ -85,6 +85,7 @@ function AddToMyShelfToDisplay(book) {
   Delbutton.addEventListener("click", () => {
     book.Delete();
     Tbody.removeChild(tr);
+    localStorage.setItem("MyShelf", JSON.stringify(MyShelf));
   });
 
   // Appends all the buttons to table rows and such
@@ -141,7 +142,6 @@ AddButton.addEventListener("click", () => {
     );
     MyShelf.push(book);
     AddToMyShelfToDisplay(book);
-    console.log(MyShelf);
     // Adds any new addition of the shelf to the local storage.
     localStorage.setItem("MyShelf", JSON.stringify(MyShelf));
   } else {
@@ -166,7 +166,6 @@ window.addEventListener("load", () => {
       );
       MyShelf.push(book);
       AddToMyShelfToDisplay(book);
-      console.log(localStorage);
     });
   }
 });
