@@ -31,8 +31,8 @@ Form.addEventListener("submit", (event) => {
 });
 
 const MyShelf = [];
-// Delete Button is inside AddToMyShelf function
-function AddToMyShelf(book) {
+// Delete Button is inside AddToMyShelfToDisplay function
+function AddToMyShelfToDisplay(book) {
   // Creates the table rows and table data and button tags, adds the class to style
   const tr = document.createElement("tr");
   tr.classList.add("TR");
@@ -140,37 +140,38 @@ AddButton.addEventListener("click", () => {
       Status.value
     );
     MyShelf.push(book);
-    AddToMyShelf(book);
+    AddToMyShelfToDisplay(book);
     console.log(MyShelf);
+    // Adds any new addition of the shelf to the local storage.
+    localStorage.setItem("MyShelf", JSON.stringify(MyShelf));
   } else {
     console.log("Empty Input Field");
   }
   ClearButton.click();
 });
-const Book1 = new Book(
-  9788804714095,
-  "The Name Of The Wind",
-  "Patrick Rothfuss",
-  622,
-  "Read"
-);
-const Book2 = new Book(
-  9783608938166,
-  "The Wise Man's Fear",
-  "Patrick Rothfuss",
-  994,
-  "Read"
-);
-const Book3 = new Book(
-  9780008115456,
-  "Assassin's Apprentice",
-  "Robin Hobb",
-  400,
-  "Reading"
-);
 
-MyShelf.push(Book1, Book2, Book3);
+// Checks localStorage for any data then collects it and outputs it
+window.addEventListener("load", () => {
+  const storedShelf = localStorage.getItem("MyShelf");
+  if (storedShelf) {
+    MyShelf.length = 0;
+    const parsedShelf = JSON.parse(storedShelf);
+    parsedShelf.forEach((bookData) => {
+      const book = new Book(
+        bookData.ISBN,
+        bookData.Title,
+        bookData.Author,
+        bookData.Pages,
+        bookData.Status
+      );
+      MyShelf.push(book);
+      AddToMyShelfToDisplay(book);
+      console.log(localStorage);
+    });
+  }
+});
+
 // Scans the whole array for books and displays them
 MyShelf.forEach((book) => {
-  AddToMyShelf(book);
+  AddToMyShelfToDisplay(book);
 });
