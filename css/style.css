@@ -43,11 +43,91 @@ header > nav > ul > li:hover {
 }
 main {
   display: flex;
-  /* flex-direction: column;
-  gap: 50px; */
   justify-content: center;
   align-items: center;
   height: 80svh;
+}
+.containerHome {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-style: groove;
+  border-width: 15px;
+  border-color: #daa520;
+  width: 85vw;
+  height: 70vh;
+  font-size: 50px;
+}
+.containerHome > .textContainer {
+  color: #daa520;
+}
+.quote p {
+  animation: popUp 1s 0s ease forwards;
+}
+.containerHome > .textContainer > .quote {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  width: 900px;
+  height: 200px;
+}
+.name p {
+  animation: popUp 1s 0s ease forwards;
+}
+.containerHome > .textContainer > .name {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  width: 900px;
+  height: 100px;
+  transition: 0.5s ease;
+}
+@keyframes popUp {
+  0% {
+    opacity: 0%;
+    transform: translateY(100%);
+  }
+  50% {
+    opacity: 100%;
+  }
+  100% {
+    transfrom: translateY(0%);
+  }
+}
+.shelfbtnContainer {
+  overflow: hidden;
+}
+.shelfbtnContainer > #shelfbtn {
+  border: 2px solid #daa520;
+  border-radius: 0px 30px/ 10px 10px;
+  height: 55px;
+  width: 150px;
+  text-wrap: nowrap;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 35px;
+  background-color: #366153;
+  color: #daa520;
+  text-decoration: none;
+  animation: btnPopUp 0.5s 1s ease forwards;
+  opacity: 0%;
+}
+@keyframes btnPopUp {
+  0% {
+    opacity: 0%;
+    transform: translateY(100%);
+  } 
+  100% {
+    opacity: 100%;
+    transfrom: translateY(0%);
+  }
+}
+#shelfbtn:hover {
+  background-color: #3e6d5d;
+  cursor: pointer;
 }
 footer {
   display: flex;

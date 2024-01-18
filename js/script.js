@@ -10,6 +10,7 @@ const Shelf = document.getElementById("Shelf");
 const Form = document.getElementById("form");
 const DropDownPuller = document.getElementById("DropDownPuller");
 const DropDown = document.getElementById("DropDown");
+
 let PullerIsDown = true;
 DropDownPuller.style.rotate = "180deg";
 
@@ -149,7 +150,6 @@ AddButton.addEventListener("click", () => {
   }
   ClearButton.click();
 });
-
 // Checks localStorage for any data then collects it and outputs it
 window.addEventListener("load", () => {
   const storedShelf = localStorage.getItem("MyShelf");
@@ -170,6 +170,28 @@ window.addEventListener("load", () => {
   }
 });
 
+const Book1 = new Book(
+  9788804714095,
+  "The Name Of The Wind",
+  "Patrick Rothfuss",
+  622,
+  "Read"
+);
+const Book2 = new Book(
+  9783608938166,
+  "The Wise Man's Fear",
+  "Patrick Rothfuss",
+  994,
+  "Read"
+);
+const Book3 = new Book(
+  9780008115456,
+  "Assassin's Apprentice",
+  "Robin Hobb",
+  400,
+  "Reading"
+);
+MyShelf.push(Book1, Book2, Book3);
 // Scans the whole array for books and displays them
 MyShelf.forEach((book) => {
   AddToMyShelfToDisplay(book);
