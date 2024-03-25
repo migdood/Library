@@ -191,8 +191,11 @@ const Book3 = new Book(
   400,
   "Reading"
 );
+
 MyShelf.push(Book1, Book2, Book3);
 // Scans the whole array for books and displays them
 MyShelf.forEach((book) => {
-  AddToMyShelfToDisplay(book);
+  if (!MyShelf.includes(book)) {
+    AddToMyShelfToDisplay(book);
+  }
 });
